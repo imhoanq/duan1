@@ -9,7 +9,7 @@ require("dotenv").config();
 let app = express();
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", process.env.URL_REACT);
 
   // Request methods you wish to allow
   res.setHeader(
@@ -33,8 +33,10 @@ app.use(function (req, res, next) {
 
 //config app
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 viewEngine(app);
 initWebRoutes(app);
