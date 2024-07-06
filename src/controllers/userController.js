@@ -49,6 +49,7 @@ let handleCreateNewUser = async (req, res) => {
 };
 
 let handleDeleteUser = async (req, res) => {
+  console.log("check delete:");
   if (!req.body.id) {
     return res.status(200).json({
       errCode: 1,
@@ -59,7 +60,11 @@ let handleDeleteUser = async (req, res) => {
   return res.status(200).json(message);
 };
 let handleEditUser = async (req, res) => {
+  console.log("check handle:", req);
+  console.log("check handle1:", req.body);
+
   let data = req.body;
+
   let message = await userService.updateUserData(data);
   return res.status(200).json(message);
 };
