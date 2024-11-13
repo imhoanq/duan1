@@ -10,7 +10,7 @@
   "keywords": [
     "fullstack"
   ],
-  "author": "MyLanh",
+  "author": "Vincent",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",

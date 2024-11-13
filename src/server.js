@@ -9,7 +9,7 @@ require("dotenv").config();
 let app = express();
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", process.env.URL_REACT);
+  res.setHeader("Access-Control-Allow-Origin", 'http://localhost:3000');
 
   // Request methods you wish to allow
   res.setHeader(
@@ -42,7 +42,7 @@ viewEngine(app);
 initWebRoutes(app);
 
 connectDB();
-let port = process.env.PORT || 6969;
+let port = process.env.PORT || 8080;
 //Port === undefined => port =6969
 app.listen(port, () => {
   //callback

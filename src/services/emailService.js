@@ -12,11 +12,8 @@ let sendSimpleEmail = async (dataSend) => {
     },
   });
 
-  // async..await is not allowed in global scope, must use a wrapper
-
-  // send mail with defined transport object
   let info = await transporter.sendMail({
-    from: '"Ngô Thị Mỹ Lành 👻" <ngomylanh1804@gmail.com>', // sender address
+    from: '"Vincent 👻" <maiviethoang25052004@gmail.com>', // sender address
     to: dataSend.reciverEmail, // list of receivers
     subject: "Thông tin đặt lịch khám bệnh", // Subject line
     html: getBodyHTMLEmail(dataSend),

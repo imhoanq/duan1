@@ -40,7 +40,7 @@ let postBookAppointment = (data) => {
           },
         });
 
-        console.log("mylanh check user:", user[0]);
+        console.log("Vincent check user:", user[0]);
         // create a booking record
 
         if (user && user[0]) {
